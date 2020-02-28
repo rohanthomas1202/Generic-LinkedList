@@ -1,11 +1,9 @@
-public class Product implements IDedObject{
-
+public class Product implements IDedObject {
 
 
     private int productID;
     private String productName;
     private String supplierName;
-
 
 
     // overriding function getID() from interface IDed Object

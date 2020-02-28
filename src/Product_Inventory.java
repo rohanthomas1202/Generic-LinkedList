@@ -26,14 +26,13 @@ public class Product_Inventory<AnyType extends Product> {
 
     //Return the product when the user enters a ID, if list is null or product not found, will return null
     AnyType findID(int ID) {
-        Node curr_node = head;
-
+        Node curr_node = head.getNext();
 
         // loop through the entire linked list until we find the correct ID,
         // if not found, we return null
         while (curr_node != null && curr_node.getPayload() != null) {
             if (curr_node.getPayload().getID() == ID) {
-                return ((AnyType)curr_node.getPayload());
+                return ((AnyType) curr_node.getPayload());
             }
             if (curr_node.getNext() != null) {
                 curr_node = curr_node.getNext();
@@ -67,10 +66,19 @@ public class Product_Inventory<AnyType extends Product> {
 
     /*
 
-boolean insertAtFront(AnyType x);
 AnyType deleteFromFront();	 // delete and return the record at the front of  the list or return       null if the list is empty
 AnyType delete(int ID); 	// find and delete the record with the given ID or returns null if it isn’t found
 void printAllRecords(); 	// print all elements in the order they appear in the linked list. if list is empty print appropriate message.
      */
 
+
+    void delete_node(Node pre, Node curr){
+        // delete a node given current and previous nodes
+
+        // set the previous node to point to the node after current
+        pre.setNext(curr.getNext());
+        // set current's next node to be null, to delete node
+        curr.setNext(null);
+
+    }
 }

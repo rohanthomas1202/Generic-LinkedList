@@ -6,7 +6,6 @@ public class Node {
     private Node next;
 
 
-
     // constructors accessors and mutators
     public Node() {
         payload = null;
@@ -14,7 +13,7 @@ public class Node {
 
     }
 
-    public Node(Product payload){
+    public Node(Product payload) {
         this.payload = payload;
     }
 
