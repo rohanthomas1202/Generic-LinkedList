@@ -38,6 +38,9 @@ public class Product_Inventory<AnyType extends Product> {
 
     //Return the product when the user enters a ID, if list is null or product not found, will return null
     AnyType findID(int ID) {
+        if (head == null){
+            return null;
+        }
         Node curr_node = head.getNext();
 
         // loop through the entire linked list until we find the correct ID,

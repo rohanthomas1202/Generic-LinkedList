@@ -15,6 +15,8 @@ public class main {
 
         Scanner sc = new Scanner(System.in);
 
+        Product_Inventory<Product> inventory= new Product_Inventory<>();
+
 
         int user_val = -1;
         do {
@@ -27,10 +29,22 @@ public class main {
 
             switch (user_val) {
                 case 1:
-                    System.out.println("Your choice: " + user_val);
+                    // case 1 will clear the linked list
+                    System.out.println("Clearing Inventory...");
+                    inventory.makeEmpty();
+                    System.out.println("Inventory Cleared");
                     break;
                 case 2:
-                    System.out.println("Your choice: " + user_val);
+                    System.out.print("Enter the id you want to find in your inventory:");
+                    int find = Integer.parseInt(sc.nextLine());
+                    if (inventory.findID(find) == null){
+                        System.out.println("Given ID not in the inventory/ inventory empty");
+                    }else{
+                        System.out.println("Found the ID you entered");
+                        System.out.println("Details:");
+                        inventory.findID(find).printID();
+                        System.out.println("------------------------------------");
+                    }
                     break;
                 case 3:
                     System.out.println("Your choice: " + user_val);
