@@ -21,8 +21,13 @@ public class main {
         product_supplier = sc.nextLine();
 
 
+
+
+
         Product p = new Product(product_ID,product_name,product_supplier);
 
+        Product_Inventory<Product> inventory = new Product_Inventory<>();
+        inventory.insertAtFront(p);
         p.printID();
 
     }
