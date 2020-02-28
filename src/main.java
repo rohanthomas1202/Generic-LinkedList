@@ -50,6 +50,10 @@ public class main {
         System.out.println("can add " + t.getID() + " ? : " + g);
         System.out.println("can add " + y.getID() + " ? : " + h);
 
+        inventory.delete(5);
+        inventory.deleteFromFront();
+
+        inventory.printAllRecords();
 
         inventory.makeEmpty();
 

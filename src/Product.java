@@ -24,6 +24,7 @@ public class Product implements IDedObject {
     // function prints out details about the product
     @Override
     public void printID() {
+        System.out.println("------------------------------------");
         System.out.println("Product ID   \t: " + productID);
         System.out.println("Product Name \t: " + productName);
         System.out.println("Supplier name\t: " + supplierName);
