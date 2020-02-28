@@ -1,3 +1,11 @@
+/*********************************************************************
+ ** Name    - Rohan Sam Thomas                                      **
+ ** UTDID   - RST170000                                             **
+ ** Class   - CS 3345 - Data Structures and Algorithmic Analysis    **
+ ** Date    - 2/28/2020                                             **
+ ** JDK     - 11                                                    **
+ ** IDE     - IntelliJ Idea                                         **
+ *********************************************************************/
 import java.util.Scanner;
 
 public class main {

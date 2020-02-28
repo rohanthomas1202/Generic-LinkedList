@@ -1,9 +1,27 @@
+/*********************************************************************
+ ** Name    - Rohan Sam Thomas                                      **
+ ** UTDID   - RST170000                                             **
+ ** Class   - CS 3345 - Data Structures and Algorithmic Analysis    **
+ ** Date    - 2/28/2020                                             **
+ ** JDK     - 11                                                    **
+ ** IDE     - IntelliJ Idea                                         **
+ *********************************************************************/
+
+// product class keeps the information about individual product id's, names and suppliers
 public class Product implements IDedObject {
 
 
     private int productID;
     private String productName;
     private String supplierName;
+
+
+    // constructor for Product
+    public Product(int productID, String productName, String supplierName) {
+        this.productID = productID;
+        this.productName = productName;
+        this.supplierName = supplierName;
+    }
 
 
     // overriding function getID() from interface IDed Object
@@ -13,12 +31,6 @@ public class Product implements IDedObject {
         return productID;
     }
 
-    // constructor for Product
-    public Product(int productID, String productName, String supplierName) {
-        this.productID = productID;
-        this.productName = productName;
-        this.supplierName = supplierName;
-    }
 
     // overriding the function printID() from interface IDedObject
     // function prints out details about the product
@@ -31,7 +43,7 @@ public class Product implements IDedObject {
     }
 
 
-    ///////////////////////// Getters and Setters for  variables /////////////////////////
+    ///////////////////////// Getters and Setters /////////////////////////
 
     public int getProductID() {
         return productID;
@@ -58,6 +70,6 @@ public class Product implements IDedObject {
         this.supplierName = supplierName;
     }
 
-    ///////////////////////// Getters and Setters for  variables /////////////////////////
+    ///////////////////////// Getters and Setters /////////////////////////
 
 }

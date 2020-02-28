@@ -1,4 +1,11 @@
-
+/*********************************************************************
+ ** Name    - Rohan Sam Thomas                                      **
+ ** UTDID   - RST170000                                             **
+ ** Class   - CS 3345 - Data Structures and Algorithmic Analysis    **
+ ** Date    - 2/28/2020                                             **
+ ** JDK     - 11                                                    **
+ ** IDE     - IntelliJ Idea                                         **
+ *********************************************************************/
 // Linked List to hold all the products
 public class Product_Inventory<AnyType extends Product> {
 
@@ -133,7 +140,7 @@ public class Product_Inventory<AnyType extends Product> {
 
     }
 
-    ///////////////////////// Getters and Setters for  variables /////////////////////////
+    ///////////////////////// Getters and Setters /////////////////////////
     public Node getHead() {
         return head;
     }
@@ -141,6 +148,6 @@ public class Product_Inventory<AnyType extends Product> {
     public void setHead(Node head) {
         this.head = head;
     }
-    ///////////////////////// Getters and Setters for  variables /////////////////////////
+    ///////////////////////// Getters and Setters /////////////////////////
 
 }
