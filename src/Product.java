@@ -1,8 +1,15 @@
 public class Product implements IDedObject{
 
+
+
+    private int productID;
+    private String productName;
+    private String supplierName;
+
+
     @Override
     public int getID() {
-        return 0;
+        return productID;
     }
 
     @Override
