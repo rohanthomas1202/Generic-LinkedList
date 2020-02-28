@@ -29,7 +29,7 @@ public class Product_Inventory<AnyType extends Product> {
 
         // loop through the entire linked list until we find the correct ID,
         // if not found, we return null
-        while (curr_node != null) {
+        while (curr_node != null && curr_node.getPayload() != null) {
             if (curr_node.getPayload().getID() == ID) {
                 return (curr_node);
             }
@@ -51,7 +51,7 @@ public class Product_Inventory<AnyType extends Product> {
     boolean insertAtFront(AnyType x) {
         boolean not_found = false;
 
-        if (findID(x.getID()) == null) {
+        if (findID(x.getID()).getPayload() == null) {
             Node temp = head;
             Node add = new Node(x);
             head.setNext(add);

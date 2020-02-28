@@ -22,13 +22,17 @@ public class main {
 
 
 
+        boolean x;
 
 
         Product p = new Product(product_ID,product_name,product_supplier);
 
         Product_Inventory<Product> inventory = new Product_Inventory<>();
-        inventory.insertAtFront(p);
+        x = inventory.insertAtFront(p);
         p.printID();
+
+
+        System.out.println(x);
 
     }
 }
