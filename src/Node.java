@@ -1,15 +1,17 @@
 public class Node {
 
-    // singly linked list, so one pointer to go forward
-    private Node next;
     // payload holds the Product class
     private Product payload;
+    // singly linked list, so one pointer to go forward
+    private Node next;
+
 
 
     // constructors accessors and mutators
     public Node() {
-        next = null;
         payload = null;
+        next = null;
+
     }
 
     public Node(Product payload){

@@ -1,17 +1,19 @@
 
 // Linked List to hold all the products
 public class Product_Inventory<AnyType extends Product> {
+
     // reference to head node
+    // head's payload will always point to null
+    // just using head to point to the linked list
     private Node head;
-    // keeping track of total number of nodes
-    private int count;
+
 
     // Product_Inventory constructor which generates an empty list
     Product_Inventory() {
         // creates a new empty list, so link head node to the first element
         // new node with no data
         head = new Node(null);
-        count = 0;
+
     }
 
 
@@ -23,7 +25,7 @@ public class Product_Inventory<AnyType extends Product> {
 
 
     //Return the product when the user enters a ID, if list is null or product not found, will return null
-    Node findID(int ID) {
+    AnyType findID(int ID) {
         Node curr_node = head;
 
 
@@ -31,7 +33,7 @@ public class Product_Inventory<AnyType extends Product> {
         // if not found, we return null
         while (curr_node != null && curr_node.getPayload() != null) {
             if (curr_node.getPayload().getID() == ID) {
-                return (curr_node);
+                return ((AnyType)curr_node.getPayload());
             }
             if (curr_node.getNext() != null) {
                 curr_node = curr_node.getNext();
@@ -43,7 +45,7 @@ public class Product_Inventory<AnyType extends Product> {
         // if we reach here, the product doesn't exist
         // or the head pointed to null(empty linked list)
         // and hence we return null
-        return curr_node;
+        return null;
 
     }
 
@@ -51,11 +53,11 @@ public class Product_Inventory<AnyType extends Product> {
     boolean insertAtFront(AnyType x) {
         boolean not_found = false;
 
-        if (findID(x.getID()).getPayload() == null) {
-            Node temp = head;
+        if (findID(x.getID()) == null) {
+            Node temp = head.getNext();
             Node add = new Node(x);
             head.setNext(add);
-            add.setNext(temp.getNext());
+            add.setNext(temp);
             not_found = true;
         }
 
