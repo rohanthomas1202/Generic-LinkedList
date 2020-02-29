@@ -1,3 +1,11 @@
+/*********************************************************************
+ ** Name    - Rohan Sam Thomas                                      **
+ ** UTDID   - RST170000                                             **
+ ** Class   - CS 3345 - Data Structures and Algorithmic Analysis    **
+ ** Date    - 2/28/2020                                             **
+ ** JDK     - 11                                                    **
+ ** IDE     - IntelliJ Idea                                         **
+ *********************************************************************/
 // class which holds the Product information and also the address to the next node
 public class Node {
 
