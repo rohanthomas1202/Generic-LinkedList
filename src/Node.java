@@ -1,3 +1,4 @@
+// class which holds the Product information and also the address to the next node
 public class Node {
 
     // payload holds the Product class
