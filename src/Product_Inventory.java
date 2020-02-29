@@ -73,6 +73,8 @@ public class Product_Inventory<AnyType extends Product> {
 
                 Node add = new Node(x);
                 head.setNext(add);
+                not_found = true;
+
             }else {
                 Node temp = head.getNext();
                 Node add = new Node(x);

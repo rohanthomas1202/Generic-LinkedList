@@ -123,8 +123,14 @@ public class main {
 
                     Product ins_product = new Product(ins_ID, ins_Pname, ins_Sname);
                     System.out.println("\nAdding Product...");
-                    inventory.insertAtFront(ins_product);
-                    System.out.println("Product Added to the front of Inventory");
+                    if (!inventory.insertAtFront(ins_product)){
+                        System.out.println("ID aldready exists, Will not add a new Product");
+                    }
+                    else{
+                        System.out.println("Product Added to the front of Inventory");
+                    }
+
+
 
                     break;
                 case 4:
@@ -179,7 +185,7 @@ public class main {
 
                         System.out.println("Deleted");
                     }else{
-                        System.out.println("Cannot Delete " + rem_ID);
+                        System.out.println("ID " + rem_ID + " not present in the inventory");
                     }
 
 
