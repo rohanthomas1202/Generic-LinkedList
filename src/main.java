@@ -79,7 +79,6 @@ public class main {
                         System.out.println("Found the ID you entered");
                         System.out.println("Details:");
                         inventory.findID(find).printID();
-                        //System.out.println("------------------------------------");
                         System.out.println("####################################");
                     }
                     break;
@@ -128,7 +127,6 @@ public class main {
                     Product del = inventory.deleteFromFront();
                     if (del != null) {
                         del.printID();
-                        //System.out.println("------------------------------------");
                         System.out.println("####################################");
 
                         System.out.println("First product in inventory cleared");
@@ -163,7 +161,6 @@ public class main {
                     if (del_ID != null) {
                         System.out.println("deleting details:");
                         del_ID.printID();
-                        //System.out.println("------------------------------------");
                         System.out.println("####################################");
 
                         System.out.println("Deleted");
