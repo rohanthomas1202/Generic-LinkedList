@@ -147,7 +147,9 @@ public class Product_Inventory<AnyType extends Product> {
             // current node points to the next node
             curr_node = curr_node.getNext();
         }
-        System.out.println("------------------------------------");
+        //System.out.println("------------------------------------");
+        System.out.println("####################################");
+
     }
 
 

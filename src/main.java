@@ -85,7 +85,8 @@ public class main {
                         System.out.println("Found the ID you entered");
                         System.out.println("Details:");
                         inventory.findID(find).printID();
-                        System.out.println("------------------------------------");
+                        //System.out.println("------------------------------------");
+                        System.out.println("####################################");
                     }
                     break;
                 case 3:
@@ -133,7 +134,9 @@ public class main {
                     Product del = inventory.deleteFromFront();
                     if (del != null){
                         del.printID();
-                        System.out.println("------------------------------------");
+                        //System.out.println("------------------------------------");
+                        System.out.println("####################################");
+
                         System.out.println("First product in inventory cleared");
                     }else{
                         System.out.println("Cannot remove, Inventory is empty");
@@ -171,7 +174,9 @@ public class main {
                     if (del_ID != null){
                         System.out.println("deleting details:");
                         del_ID.printID();
-                        System.out.println("------------------------------------");
+                        //System.out.println("------------------------------------");
+                        System.out.println("####################################");
+
                         System.out.println("Deleted");
                     }else{
                         System.out.println("Cannot Delete " + rem_ID);
@@ -197,7 +202,7 @@ public class main {
 
                     break;
             }
-            System.out.println("\n\n\n\n\n");
+            System.out.println("----------------------------------------------------------------------------");
 
         } while (user_val != 7);
     }
