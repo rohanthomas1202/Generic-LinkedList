@@ -32,7 +32,7 @@ public class Product_Inventory<AnyType extends Product> {
     // empties the linked list
     void makeEmpty() {
         // head points to null and hence the entire linked list is deleted by java's garbage collector
-        head = null;
+        head.setNext(null);
     }
 
 
@@ -69,6 +69,11 @@ public class Product_Inventory<AnyType extends Product> {
 
         // if the element is not int the linked list, add it
         if (findID(x.getID()) == null) {
+            if (head.getNext() == null){
+
+                Node add = new Node(x);
+                head.setNext(add);
+            }
             Node temp = head.getNext();
             Node add = new Node(x);
             head.setNext(add);
