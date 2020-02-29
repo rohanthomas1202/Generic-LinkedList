@@ -7,6 +7,8 @@
  ** IDE     - IntelliJ Idea                                         **
  *********************************************************************/
 
+import java.lang.management.PlatformLoggingMXBean;
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class main {
@@ -23,8 +25,27 @@ public class main {
 
 
             print_menu();
-            System.out.print("Your choice: ");
-            user_val = Integer.parseInt(sc.nextLine());
+
+            // validating our string to make sure we receive an integer
+            boolean pass = false;
+            while(!pass){
+                pass = true;
+                System.out.print("Your choice: ");
+                String input = sc.nextLine();
+                try{
+                    user_val = Integer.parseInt(input);
+
+                }catch(NumberFormatException e){
+                    System.out.println("ERROR!!! Input needs to be an integer !!!ERROR");
+                    System.out.println("Enter an Integer");
+                    pass = false;
+                }
+            }
+
+
+
+
+
 
 
             switch (user_val) {
@@ -37,7 +58,27 @@ public class main {
                 case 2:
                     //case 2 finds a product given its ID
                     System.out.print("Enter the id you want to find in your inventory:");
-                    int find = Integer.parseInt(sc.nextLine());
+
+                    int find = -100;
+
+                    // validating our string to make sure we receive an integer
+                    pass = false;
+                    while(!pass){
+                        pass = true;
+                        System.out.print("Your choice: ");
+                        String input = sc.nextLine();
+                        try{
+                            find = Integer.parseInt(input);
+
+                        }catch(NumberFormatException e){
+                            System.out.println("ERROR!!! Input needs to be an integer !!!ERROR");
+                            System.out.println("Enter an Integer");
+                            pass = false;
+                        }
+                    }
+
+
+                    // if the id is not in the inventory or the inventory is empty, print the following
                     if (inventory.findID(find) == null) {
                         System.out.println("Given ID not in the inventory/ inventory empty");
                     } else {
@@ -49,14 +90,34 @@ public class main {
                     break;
                 case 3:
                     // case 3 inserts a product to the front of the inventory
-                    int ins_ID;
+                    int ins_ID = -100;
                     String ins_Pname;
                     String ins_Sname;
-                    System.out.print("Enter Product ID   \t: ");
-                    ins_ID = Integer.parseInt(sc.nextLine());
-                    System.out.print("\nEnter Product Name \t: ");
+
+
+
+
+
+
+                    // validating our string to make sure we receive an integer
+                    pass = false;
+                    while(!pass){
+                        pass = true;
+                        System.out.print("Enter Product ID   \t: ");
+                        String input = sc.nextLine();
+                        try{
+                            ins_ID = Integer.parseInt(input);
+
+                        }catch(NumberFormatException e){
+                            System.out.println("ERROR!!! Input needs to be an integer !!!ERROR");
+                            System.out.println("Enter an Integer");
+                            pass = false;
+                        }
+                    }
+
+                    System.out.print("Enter Product Name \t: ");
                     ins_Pname = sc.nextLine();
-                    System.out.print("\nEnter Supplier Name\t: ");
+                    System.out.print("Enter Supplier Name\t: ");
                     ins_Sname = sc.nextLine();
 
                     Product ins_product = new Product(ins_ID, ins_Pname, ins_Sname);
@@ -67,6 +128,17 @@ public class main {
                     break;
                 case 4:
                     // case 4 removes the first product in the inventory
+                    System.out.println("Removing the first item in the inventory...");
+                    System.out.println("Deleting the following:");
+                    Product del = inventory.deleteFromFront();
+                    if (del != null){
+                        del.printID();
+                        System.out.println("------------------------------------");
+                        System.out.println("First product in inventory cleared");
+                    }else{
+                        System.out.println("Cannot remove, Inventory is empty");
+                    }
+
 
 
                     break;
@@ -74,16 +146,49 @@ public class main {
                     // case 5 deletes a product given its ID
 
 
+
+                    int rem_ID = -100;
+
+                    // validating our string to make sure we receive an integer
+                    pass = false;
+                    while(!pass){
+                        pass = true;
+                        System.out.print("Enter Product ID to delete: ");
+                        String input = sc.nextLine();
+                        try{
+                            rem_ID = Integer.parseInt(input);
+
+                        }catch(NumberFormatException e){
+                            System.out.println("ERROR!!! Input needs to be an integer !!!ERROR");
+                            System.out.println("Enter an Integer");
+                            pass = false;
+                        }
+                    }
+
+
+                    Product del_ID = inventory.delete(rem_ID);
+
+                    if (del_ID != null){
+                        System.out.println("deleting details:");
+                        del_ID.printID();
+                        System.out.println("------------------------------------");
+                        System.out.println("Deleted");
+                    }else{
+                        System.out.println("Cannot Delete " + rem_ID);
+                    }
+
+
+
                     break;
                 case 6:
                     // case 6 prints all the products in the current inventory
-
+                    System.out.println("Printing Everything in inventory");
+                    inventory.printAllRecords();
 
                     break;
                 case 7:
                     // Case 7 exists out from the inventory once we finish updating it
-
-
+                    // quits when user_val is checked in while loop
                     break;
                 default:
 
@@ -92,7 +197,7 @@ public class main {
 
                     break;
             }
-
+            System.out.println("\n\n\n\n\n");
 
         } while (user_val != 7);
     }

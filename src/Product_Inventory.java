@@ -73,12 +73,13 @@ public class Product_Inventory<AnyType extends Product> {
 
                 Node add = new Node(x);
                 head.setNext(add);
+            }else {
+                Node temp = head.getNext();
+                Node add = new Node(x);
+                head.setNext(add);
+                add.setNext(temp);
+                not_found = true;
             }
-            Node temp = head.getNext();
-            Node add = new Node(x);
-            head.setNext(add);
-            add.setNext(temp);
-            not_found = true;
         }
 
 
@@ -89,14 +90,19 @@ public class Product_Inventory<AnyType extends Product> {
 
     // delete and return the record at the front of  the list or return null if the list is empty
     AnyType deleteFromFront() {
+
         // node to be deleted will be the one after head and head will be pre_node for this function
         Node pre_node = head;
         Node curr_node = head.getNext();
-        // calling delete function to delete the first node
-        delete_node(pre_node, curr_node);
+        if (curr_node == null){
+            return null;
+        }else {
+            // calling delete function to delete the first node
+            delete_node(pre_node, curr_node);
 
-        // returning the value in deleted node
-        return (AnyType) curr_node.getPayload();
+            // returning the value in deleted node
+            return (AnyType) curr_node.getPayload();
+        }
     }
 
 
@@ -106,6 +112,12 @@ public class Product_Inventory<AnyType extends Product> {
         if (findID(ID) != null) {
             Node pre_node = head;
             Node curr_node = head.getNext();
+            if (curr_node == null){
+                return null;
+            }
+            if (curr_node.getNext() == null){
+                return null;
+            }
             while (true) {
                 if (curr_node.getPayload().getID() == ID) {
                     delete_node(pre_node, curr_node);
